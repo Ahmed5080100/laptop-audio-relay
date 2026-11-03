@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Laptop Audio to Phone",
+  "version": "0.1.0",
+  "description": "Send Chrome tab audio to your phone",
+  "permissions": [
+    "tabCapture",
+    "sidePanel",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "Laptop Audio Relay"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
