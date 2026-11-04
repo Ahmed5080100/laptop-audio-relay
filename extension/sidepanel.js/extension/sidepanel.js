@@ -1,4 +1,4 @@
-const SERVER = "https://YOUR-APP-NAME.onrender.com";
+const SERVER = "https://laptop-audio-relay.ethiodeploy.app";
 
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
