@@ -129,10 +129,18 @@ async function start() {
       throw new Error("لم يتم العثور على التبويب الحالي.");
     }
 
-    captureStream = await chrome.tabCapture.capture({
-      audio: true,
-      video: false
-    });
+    captureStream = await new Promise((resolve, reject) => {
+  chrome.tabCapture.capture(
+    { audio: true, video: false },
+    stream => {
+      if (chrome.runtime.lastError) {
+        reject(new Error(chrome.runtime.lastError.message));
+      } else {
+        resolve(stream);
+      }
+    }
+  );
+});
 
     if (!captureStream) {
       throw new Error("Chrome لم يتمكن من التقاط صوت التبويب.");
